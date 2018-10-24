@@ -6,5 +6,5 @@ while true; do
 	else
 		date +"%R completed properly"
 	fi
-	sleep 20s
+	sleep 20
 done
