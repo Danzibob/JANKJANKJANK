@@ -10,10 +10,10 @@ else
 	sel raw | grep 8
 	if [ $? -eq 0 ]; then
 		>&2 date +"%R Off-Air is on air. Taking no action."
-	>&2 date +"%R Jukebox is not on air"
-	>&2 date +"%R Staying as is"
-	# Alert a human
-	echo "Dolby can't access music store! Jukebox isn't on air right now. Staying as is. Check campus audio." 
-| mail -s 
-"Mount outright failed" danzibob@gmail.com il598@york.ac.uk
+	else
+		>&2 date +"%R Jukebox is not on air"
+		>&2 date +"%R Staying as is"
+		# Alert a human
+		echo "Dolby can't access music store! Jukebox isn't on air right now. Staying as is. Check campus audio." | mail -s "Mount outright failed" danzibob@gmail.com il598@york.ac.uk
+	fi
 fi
